@@ -7,6 +7,12 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,message=FALSE)
 require(tidyverse)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(zipcode)
 ```
 
 ### Make a Graph of the Obesity Data
@@ -21,7 +27,9 @@ obesity = read_csv("obesity.csv") %>%
 ```{r plot}
 ggplot(obesity, aes(x=age,y=prevalence,fill=sex)) +
   geom_violin() +
-  scale_fill_manual(values = c("hotpink","powderblue")) +
+  scale_fill_manual(values = c("blue","red")) +
+  ggtitle('Obesity prevalence by age and sex')+
   theme_bw()
+## tdaskldskfjasd
 ```
 
